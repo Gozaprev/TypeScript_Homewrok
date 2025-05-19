@@ -46,15 +46,39 @@ export class BooksController {
 
         let result = [...this.books];
 
+        // if (author) {
+        //     result = result.filter(book => book.author.toLowerCase() === author.toLowerCase());
+
+        // }
+
+        // if (author) {
+        //     result = result.filter(
+        //         book => book.author.toLowerCase().includes(author.toLowerCase())
+        //       );
+
+        // }
+
+
+        if (author) {
+            const authorLower = author.toLowerCase();
+            result = result.filter(book => book.author.toLowerCase() === authorLower);
+           
+          }
+          
+
+
+
         if (minPrice) {
             result = result.filter((books) => books.price >= parseFloat(minPrice))
         }
 
-        if (author) {
-            result = result.filter((books) => books.author === author)
-        }
-
         return result
+
+        // if (author) {
+        //     result = result.filter((books) => books.author === author)
+        // }
+
+
     }
 
 
@@ -107,8 +131,8 @@ export class BooksController {
         return book;
     }
 
-   
-   
+
+
     // @Put(':id')
     // update(@Param('id') id: string, @Body() updatedBook: any) {
     //     const index = this.books.findIndex(b => b.id === parseInt(id));
