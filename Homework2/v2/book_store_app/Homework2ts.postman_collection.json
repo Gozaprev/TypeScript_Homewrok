@@ -149,7 +149,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/books?minPrice=30",
+					"raw": "http://localhost:3000/api/books/search?minPrice=30",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -157,7 +157,8 @@
 					"port": "3000",
 					"path": [
 						"api",
-						"books"
+						"books",
+						"search"
 					],
 					"query": [
 						{
